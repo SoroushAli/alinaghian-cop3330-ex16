@@ -3,8 +3,13 @@
  *  Copyright 2021 Soroush Alinaghian
  */
 package base;
+
+import java.util.Scanner;
+
 /*
-Write a program that asks the user for their age and compare it to the legal driving age of sixteen. If the user is sixteen or older, then the program should display "You are old enough to legally drive." If the user is under sixteen, the program should display "You are not old enough to legally drive."
+Write a program that asks the user for their age and compare it to the legal driving age of sixteen.
+If the user is sixteen or older, then the program should display "You are old enough to legally drive."
+If the user is under sixteen, the program should display "You are not old enough to legally drive."
 
 Example Output
 
@@ -28,7 +33,18 @@ Instead of hard-coding the driving age in your program logic, research driving a
 
  */
 public class App {
+    static Scanner in = new Scanner(System.in);
+
     public static void main(String[] args) {
-        
+        drinkingAgeComparison();
+    }
+
+    private static int readAge() {
+        return in.nextInt();
+    }
+
+    private static void drinkingAgeComparison() {
+        int age = readAge();
+        System.out.println("What is your age? " + age + (age >= 16 ? "\nYou are old enough to legally drive." : "\nYou are not old enough to legally drive."));
     }
 }
